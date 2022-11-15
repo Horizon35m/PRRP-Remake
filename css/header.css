@@ -1,47 +1,105 @@
-header {
+.header {
+    max-width: 95vw;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px, 10%;
-}
 
-li,
-a,
-button {
-    font-size: 16px;
-    text-decoration: none;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo-header {
-    cursor: pointer;
+    max-height: 50px;
 }
 
-.nav-links {
-    list-style: none;
+nav {
+    color: aqua;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background-color: #38042B;
+    padding: 16px 32px;
+    border-bottom: 3px solid #920556;
 }
 
-.nav-links li {
-    display: inline-block;
-    padding: 0px, 20px;
-}
+.hamburger {
+    display: block;
+    position: relative;
+    z-index: 1;
 
-.nav-links li a {
-    transition: all 0.3s ease 0s;
-}
+    user-select: none;
 
-.nav-links li a:hover {
-    color: blue;
-}
-
-.discord-btn {
-    padding: 9px, 25px;
-    background-color: aqua;
+    appearance: none;
     border: none;
-    border-radius: 50px;
+    outline: none;
+    background: none;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
 }
 
-.discord-btn-logo {
-    width: 60px;
+.hamburger span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background-color: whitesmoke;
+    border-radius: 6px;
+    z-index: 1;
+
+    transform-origin: 0 0;
+
+    transition: 0.4s;
+}
+
+.hamburger:hover span:nth-child(2) {
+    transform: translateX(-10px);
+    background-color: #EFC051;
+}
+
+.hamburger.is-active span:nth-child(1) {
+    transform: translate(0px, -2px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.is-active span:nth-child(3) {
+    transform: translate(-3px, 3px) rotate(-45deg);
+}
+
+.hamburger.is-active:hover span {
+    background-color: #EFC051;
+}
+
+.menu {
+    display: none;
+    flex: 1 1 0%;
+}
+
+.menu a {
+    color: #EFC051;
+    margin: 0 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.4s;
+    padding: 8px 16px;
+    border-radius: 99px;
+}
+
+.menu a.is-active,
+.menu a:hover {
+    background-color: #920556;
+}
+
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+    }
 }
