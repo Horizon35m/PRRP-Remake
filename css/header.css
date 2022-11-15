@@ -12,7 +12,6 @@
 }
 
 nav {
-    color: aqua;
     position: fixed;
     top: 0;
     left: 0;
@@ -92,6 +91,13 @@ nav {
 .menu a.is-active,
 .menu a:hover {
     background-color: #920556;
+}
+
+.dropmenu a {
+    
+    background-color: #920556;
+    height: 300px;
+
 }
 
 @media (min-width: 768px) {
