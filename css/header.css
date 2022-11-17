@@ -12,7 +12,7 @@
 }
 
 nav {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
@@ -78,6 +78,24 @@ nav {
     flex: 1 1 0%;
 }
 
+.dropmenu {
+    visibility: hidden;
+    margin: 0;
+    height: 0px;
+}
+
+.dropmenu.is-active {
+    visibility: visible;
+    display: block;
+    height: auto;
+    margin: auto;
+}
+
+.dropmenu-container {
+    display: flex;
+    flex-flow: column;
+}
+
 .menu a {
     color: #EFC051;
     margin: 0 16px;
@@ -93,11 +111,11 @@ nav {
     background-color: #920556;
 }
 
-.dropmenu a {
-    
-    background-color: #920556;
-    height: 300px;
-
+.dropmenu.is-active a {
+    color: #EFC051;
+    font-weight: 600;
+    text-decoration: none;
+    padding-top: 20px;
 }
 
 @media (min-width: 768px) {
